@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adding Words</title>
+    <link rel="stylesheet" th:href="@{/css/add_words_style.css?version=51}">
+</head>
+<body>
+    <div class="wrapper">
+         <div th:replace="header"></div>
+
+        <div class="main_container">
+            <form class="input_box" th:action="@{/add_words}" th:object="${word_translate}" method="post">
+                <div class="inp">
+                    <p>Word</p>
+                    <input type="text" th:field="*{word}">
+                </div>
+                <div class="inp">
+                    <p>Translate<p>
+                    <input type="text" th:field="*{translate}">
+                </div>
+                <input type="submit" class="add_btn" value="add">
+            </form>
+        </div>
+
+        <div th:replace="footer"/>
+    </div>
+</body>
+</html>

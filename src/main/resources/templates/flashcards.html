@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/flashcards_style.css?version=51}">
+
+    <script type="text/javascript" th:src="@{/js/turn_card.js}"></script>
+
+    <title>Flashcards</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div th:replace="header"/>
+
+        <div class="main_container">
+            <table class="card_box">
+                <tr>
+                    <td colspan="2" class="card" th:onclick="changeVisibility()">
+                        <button class="card__face front">
+                            <span class="card_content word">
+                                <p th:text="${wordTranslate.word}"></p>
+                            </span>
+                        </button>
+                        <button class="card__face back">
+                            <span class="card_content translate">
+                                <p th:text="${wordTranslate.translate}"></p>
+                            </span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a th:href="@{|/studying/flashcards?ind=${index-1}|}">&#8592;</a>
+                        <p th:text="${index+1}"></p>
+                        <a th:href="@{|/studying/flashcards?ind=${index+1}|}">&#8594;</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div th:replace="footer"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+.main_container{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.dict_wrapper{
+    position: relative;
+    display: flex;
+    top: 30px;
+    height: 460px;
+    padding: 0 40px;
+
+    overflow-x: hidden;
+}
+
+.dict_wrapper:hover{
+    overflow-x: auto;
+}
+
+.dict_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    height: 420px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: -7px 10px 21px 1px rgba(0,0,0,0.38);
+    transition: transform .5s, box-shadow .5s;
+
+    cursor: pointer;
+}
+
+.dict_box:hover{
+    transform: translateY(15px);
+    box-shadow: -7px -5px 21px 1px rgba(0,0,0,0.38);
+    transition: transform .5s, box-shadow .5s;
+}
+
+.dict_box:not(.dict_box:last-child){
+    margin-right: 40px;
+}
+
+.dict_name{
+    margin: 20px 0 0 20px;
+    padding: 0;
+    font-family: 'Open Sans';
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+}
+
+.dict_name a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.words_box{
+    padding-top: 20px;
+    width: 360px;
+}
+
+.words_box li, .datetime{
+    display: flex;
+    padding: 0 0 12px 20px;
+
+    font-size: 18px;
+}
+
+.datetime{
+    position: absolute;
+    bottom: 10px;
+}
+
+.dash{
+    padding: 0 10px;
+}
+
+.translate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+
+.words_box input[type=text]{
+    width: 105px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+/*.btn{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+
+/*    border: 1px solid grey;*/
+/*    border-radius: 3px;*/
+
+/*    font-size: 15px;*/
+/*    color: white;*/
+/*    cursor: pointer;*/
+/*    background-color: grey;*/
+
+/*    text-decoration: none;*/
+/*}*/
+
+/*.btn_add{*/
+/*    width: 50px;*/
+/*    height: 25px;*/
+/*    margin-left: 20px;*/
+/*}*/
+
+/*.btn:hover{*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    border: 1px solid black;*/
+
+/*    transition: background .2s;*/
+/*}*/
+
+::-webkit-scrollbar {
+    height: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

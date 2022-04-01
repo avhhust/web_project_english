@@ -1,0 +1,64 @@
+.main_container{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card_box{
+    position: relative;
+    top: 150px;
+    margin: 0 auto;
+}
+
+.card, .card__face{
+    margin: 0 auto;
+    width: 550px;
+    height: 400px;
+}
+
+.card__face{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*border: 2px solid black;*/
+    border-radius: 10px;
+
+    background-color: white;
+}
+
+.turn__anim{
+    transform: rotateX(180deg);
+    transition: transform .4s;
+}
+
+
+.card_box tr:last-child td{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto 10px auto;
+
+    font-size: 25px;
+
+}
+
+.card_box tr:last-child td a:hover{
+
+}
+
+.card_content{
+    transition: all .2s linear;
+}
+
+.word p, .translate p{
+    font-size: 28px;
+}
+
+/*for animation turn card*/
+.back{
+    display: none;
+}
+
+.hide{
+    opacity: 0;
+    transition: all .2s linear;
+}

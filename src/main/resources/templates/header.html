@@ -1,0 +1,17 @@
+<link rel="stylesheet" th:href="@{/css/reset.css?version=51}">
+<link rel="stylesheet" th:href="@{/css/header_style.css}">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap?version=51" rel="stylesheet" type='text/css'>
+
+<div class="header">
+	<img th:src="@{/img/logo.svg}" alt="" class="logo">
+	<ul class="nav">
+		<li><a th:href="@{/home}">Home</a></li>
+		<li><a th:href="@{/dictionaries}">Dictionaries</a></li>
+		<li><a th:href="@{/studying/flashcards}">Flashcards</a></li>
+		<li><a th:href="@{/add_words}">Add words</a></li>
+	</ul>
+	<div class="log_in">
+		<a th:href="@{/login}">Log in</a>
+	</div>
+</div>

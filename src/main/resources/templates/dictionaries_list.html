@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/dictionaries_list_style.css}">
+    <title>Dictionaries</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div th:replace="header"/>
+
+        <div class="main_container">
+            <ul class="dict_wrapper" id="horizontal-scroller">
+                <script src="fast_add_words_script.js"></script>
+                <li class="dict_box" th:each="entry, iter: ${mapOfDictAndWords}" th:onclick="'window.location.href=\'/dictionaries/' + ${entry.key.id} + '\''">
+                    <h2 class="dict_name">
+                        <a th:href="@{/dictionaries/${entry.key.id}}" th:text="${entry.key.name}"></a>
+                    </h2>
+                    <ul class="words_box">
+                        <li th:each="word_translate, jter : ${entry.value}">
+                            <p th:text="${word_translate.word}"></p>
+                            <span class="dash">&#x2013;</span>
+                            <p th:text="${word_translate.translate}"></p>
+                        </li>
+<!--                        <li>-->
+<!--                            <form th:object="{}">-->
+<!--                                <input type="text" class="word" placeholder="word">-->
+<!--                                <span class="dash">&#x2013;</span>-->
+<!--                                <input type="text" class="translate" placeholder="translate">-->
+<!--                                <input type="button" class="btn_add btn" value="+">-->
+<!--                            </form>-->
+<!--                        </li>-->
+                    </ul>
+                    <p class="datetime" th:text="${@dictionaryController.getDateCreation(entry.key.dateCreation)}"></p>
+                </li>
+            </ul>
+        </div>
+
+        <div th:replace="footer"/>
+    </div>
+</body>
+</html>
